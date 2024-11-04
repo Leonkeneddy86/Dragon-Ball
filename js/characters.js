@@ -1,6 +1,6 @@
 const requestURL = '."https://dragonball-api.com/api/characters?limit=58",';
 
-async function fetchCarsJson(){
+async function fetchCharactersJson(){
     const response = await fetch(requestURL);
     try{
         if (!response.ok) {
@@ -9,41 +9,42 @@ async function fetchCarsJson(){
         return await response.json();
     }
     catch (error){
-        console.error('Error al obetener los coches de la Api : ', error);
+        console.error('Error al obetener los personajes de la Api : ', error);
         return null;
     }
    
 }
 
-function createCarsCard ({id, brand, image, price, year, description}){
+function createCarsCard ({name, ki, maxKi, gender, affiliation, race, image}){
     return `
         <div class="card" style="width: 550px;">
             <img src="${image}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${id} - ${brand}</h5>
-                <p class="card-text">${description}</p>
+                <h5 class="card-title">${name}</h5>
+                <p class="card-text">${race} - ${gender}</p>
             </div>
             <ul class="list-group list-group-flush">
-                <li class="list-group-item">${year}</li>
-                <li class="list-group-item">${price}</li>
+                <li class="list-group-item">${maxKi}</li>
+                <li class="list-group-item">${affiliation}</li>
+                <li class="list-group-item">${ki}</li>
             </ul>
         </div>
 `;
 }
 
 async function displayCars() {
-    const carSection = document.getElementById('carSection');
-    const carsData = await fetchCarsJson();
+    const charactersSection = document.getElementById('carSection');
+    const charactersData = await fetchCharactersJson();
 
-    if (carsData && carsData.cars){
-        const carCards = carsData.cars.map(createCarsCard).join('');
-        carSection.innerHTML = carCards;
+    if (charactersData && charactersData.cars){
+        const charactersCards = charactersData.cars.map(createCarsCard).join('');
+        charactersSection.innerHTML = charactersCards;
     }
     else
     {
-        carSection.innerHTML = `<p>No se ha podido cargar el Json de los coches</p>`;    
+        charactersSection.innerHTML = `<p>No se ha podido cargar el Json de los personajes</p>`;    
     }
 }
 
 
-displayCars();
+displaycharacters();
