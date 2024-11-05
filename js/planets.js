@@ -1,6 +1,6 @@
 const requestURL = '."https://dragonball-api.com/api/planets?limit=20"';
 
-async function fetchCarsJson(){
+async function fetchPlanetsJson(){
     const response = await fetch(requestURL);
     try{
         if (!response.ok) {
@@ -9,41 +9,37 @@ async function fetchCarsJson(){
         return await response.json();
     }
     catch (error){
-        console.error('Error al obetener los coches de la Api : ', error);
+        console.error('Error al obtener los planetas de la Api : ', error);
         return null;
     }
    
 }
 
-function createCarsCard ({id, brand, image, price, year, description}){
+function createPlanetsCard ({name, image, isDestroyed}){
     return `
         <div class="card" style="width: 550px;">
             <img src="${image}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${id} - ${brand}</h5>
-                <p class="card-text">${description}</p>
+                <h5 class="card-title">${name}</h5>
+                <p class="card-text">${isDestroyed}</p>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">${year}</li>
-                <li class="list-group-item">${price}</li>
-            </ul>
         </div>
 `;
 }
 
-async function displayCars() {
-    const carSection = document.getElementById('carSection');
-    const carsData = await fetchCarsJson();
+async function displayPlanets() {
+    const planetsSection = document.getElementById('planetsSection');
+    const planetsData = await fetchPlanetsJson();
 
-    if (carsData && carsData.cars){
-        const carCards = carsData.cars.map(createCarsCard).join('');
-        carSection.innerHTML = carCards;
+    if (planetsData && planetsData.planets){
+        const planetsCards = planetsData.cars.map(createPlanetsCard).join('');
+        planetsSection.innerHTML = planetsCards;
     }
     else
     {
-        carSection.innerHTML = `<p>No se ha podido cargar el Json de los coches</p>`;    
+        planetsSection.innerHTML = `<p>No se ha podido cargar el Json de los planetas</p>`;    
     }
 }
 
 
-displayCars();
+displayPlanets();
