@@ -1,4 +1,4 @@
-const requestURL = '."https://dragonball-api.com/api/characters?limit=58",';
+const requestURL = 'https://dragonball-api.com/api/characters?limit=58';
 
 async function fetchCharactersJson(){
     const response = await fetch(requestURL);
@@ -36,8 +36,8 @@ async function displayCharacters() {
     const charactersSection = document.getElementById('charactersSection');
     const charactersData = await fetchCharactersJson();
 
-    if (charactersData && charactersData.characters){
-        const charactersCards = charactersData.characters.map(createCharactersCard).join('');
+    if (charactersData && charactersData.items){
+        const charactersCards = charactersData.items.map(createCharactersCard).join('');
         charactersSection.innerHTML = charactersCards;
     }
     else
