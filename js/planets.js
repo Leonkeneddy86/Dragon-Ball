@@ -1,4 +1,4 @@
-const requestURL = '."https://dragonball-api.com/api/planets?limit=20"';
+const requestURL = "https://dragonball-api.com/api/planets?limit=20";
 
 async function fetchPlanetsJson(){
     const response = await fetch(requestURL);
@@ -31,8 +31,8 @@ async function displayPlanets() {
     const planetsSection = document.getElementById('planetsSection');
     const planetsData = await fetchPlanetsJson();
 
-    if (planetsData && planetsData.planets){
-        const planetsCards = planetsData.cars.map(createPlanetsCard).join('');
+    if (planetsData && planetsData.items){
+        const planetsCards = planetsData.items.map(createPlanetsCard).join('');
         planetsSection.innerHTML = planetsCards;
     }
     else
