@@ -1,0 +1,14 @@
+header{
+    text-align: center;
+    background-color: darkorange;
+}
+
+.cardPlanets{
+    background-color: gray;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}

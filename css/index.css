@@ -1,0 +1,20 @@
+header{
+    align-content: center;
+    background: linear-gradient(rgb(185, 33, 152), rgb(237, 192, 11));
+    
+    display: flex;
+    justify-content: center;
+    justify-content: space-evenly;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: xx-large
+}
+  
+body{
+
+    background: linear-gradient(rgb(193, 46, 149),red);
+}
+footer{
+    font-size: 35px;
+    font-family: fantasy;
+    background:linear-gradient(rgb(153, 25, 199),rgb(238, 0, 255))
+}
