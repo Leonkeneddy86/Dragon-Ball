@@ -9,13 +9,13 @@ async function fetchCharactersJson(){
         return await response.json();
     }
     catch (error){
-        console.error('Error al obetener los personajes de la Api : ', error);
+        console.error('Error al obtener los personajes de la Api : ', error);
         return null;
     }
    
 }
 
-function createCarsCard ({name, ki, maxKi, gender, affiliation, race, image}){
+function createCharactersCard ({name, ki, maxKi, gender, affiliation, race, image}){
     return `
         <div class="card" style="width: 550px;">
             <img src="${image}" class="card-img-top" alt="...">
@@ -32,12 +32,12 @@ function createCarsCard ({name, ki, maxKi, gender, affiliation, race, image}){
 `;
 }
 
-async function displayCars() {
-    const charactersSection = document.getElementById('carSection');
+async function displayCharacters() {
+    const charactersSection = document.getElementById('charactersSection');
     const charactersData = await fetchCharactersJson();
 
-    if (charactersData && charactersData.cars){
-        const charactersCards = charactersData.cars.map(createCarsCard).join('');
+    if (charactersData && charactersData.characters){
+        const charactersCards = charactersData.characters.map(createCharactersCard).join('');
         charactersSection.innerHTML = charactersCards;
     }
     else
@@ -47,4 +47,4 @@ async function displayCars() {
 }
 
 
-displaycharacters();
+displayCharacters();
