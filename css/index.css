@@ -7,8 +7,23 @@ body{
     align-content: center;
     text-align: center;
     background-image: url(../images/portadas/portada.png);
-    
     background-size: cover;
+    background-repeat: no-repeat;
+}
+
+footer{
+    align-content: center;
+    text-align: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../images/footer/footer.jpg)
+    
+
+}
+
+main{
+    text-decoration: none;
+    background-color: white;
 }
 
 .logo{
@@ -21,6 +36,6 @@ body{
 
 a{
 text-decoration: none;
-background-color: aqua;
+background-color: rgb(255, 255, 255);
 } 
 
