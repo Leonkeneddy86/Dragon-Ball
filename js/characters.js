@@ -17,7 +17,7 @@ async function fetchCharactersJson(){
 
 function createCharactersCard ({name, ki, maxKi, gender, affiliation, race, image}){
     return `
-        <div class="card" style="width: 550px;">
+        <div class="card" style="width: 400px;">
             <img src="${image}" class="card-img-top" alt="...">
             <div class="card-body">
                 <h5 class="card-title">${name}</h5>
