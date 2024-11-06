@@ -37,6 +37,12 @@ main{
 
 a{
 text-decoration: none;
-background-color: rgb(255, 255, 255);
+color:rgb(255, 0, 230)
 } 
+.git{
+    width: 25px;
+}
 
+.gitdev{
+    width: 25px;
+}
