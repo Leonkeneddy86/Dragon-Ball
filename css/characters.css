@@ -1,9 +1,11 @@
 header{
     text-align: center;
-   background-color: orange; 
+   background-color: orange;
+   font-family: Georgia, 'Times New Roman', Times, serif; 
 }
 
 .cardCharacters{
+    gap: 10px;
     background-color: gray;
     display: flex;
     flex-wrap: wrap;
