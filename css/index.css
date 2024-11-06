@@ -31,6 +31,7 @@ main{
 }
 
 .title{
+    background-image: url(../images/portadas/titulo.png);
     width: 400px;
 }
 
