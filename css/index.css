@@ -46,7 +46,7 @@ header nav ul li a:hover {
 
 
 main {
-    flex: 1; /* Empuja el footer hacia abajo */
+    flex: 1;
     padding: 50px 20px;
     text-align: center;
     background: url(../images/portadas/portada.png) no-repeat center center/cover;
@@ -54,6 +54,7 @@ main {
     font-size: 24px;
     font-weight: 500;
     box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.7);
+
 }
 
 main::after {
