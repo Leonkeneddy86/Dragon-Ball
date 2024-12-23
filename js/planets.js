@@ -12,7 +12,7 @@ async function fetchPlanetsJson(){
         console.error('Error al obtener los planetas de la Api : ', error);
         return null;
     }
-   
+
 }
 
 function createPlanetsCard ({name, image, isDestroyed}){
