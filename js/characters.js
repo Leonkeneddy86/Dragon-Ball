@@ -12,7 +12,7 @@ async function fetchCharactersJson(){
         console.error('Error al obtener los personajes de la Api : ', error);
         return null;
     }
-   
+
 }
 
 function createCharactersCard ({name, ki, maxKi, gender, affiliation, race, image}){

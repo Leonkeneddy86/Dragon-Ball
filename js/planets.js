@@ -36,9 +36,8 @@ async function displayPlanets() {
     }
     else
     {
-        planetsSection.innerHTML = `<p>No se ha podido cargar el Json de los planetas</p>`;    
+        planetsSection.innerHTML = `<p>No se ha podido cargar el Json de los planetas</p>`;
     }
 }
-
 
 displayPlanets();
